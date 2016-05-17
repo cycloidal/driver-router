@@ -4,7 +4,7 @@ A router for cycle.js using uniloc and history.
 Install:
 
 ```bash
-$ npm install --save @cycloidal/driver-router
+$ npm install --save git+https://github.com/cycloidal/driver-router.git
 ```
 
 Usage:
