@@ -1,0 +1,38 @@
+{
+  "name": "@cycloidal/driver-router",
+  "version": "0.1.0",
+  "author": "Jakob Hohlfeld",
+  "description": "A router for cycle.js using uniloc and history.",
+  "license": "MIT",
+  "main": "lib/driver-router.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precompile-lib": "rm -rf lib && mkdir -p lib",
+    "compile-lib": "babel src/ -d lib/",
+    "prepublish": "npm run precompile-lib && npm run compile-lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cycloidal/driver-router.git"
+  },
+  "keywords": [
+    "cycle",
+    "router",
+    "reactive",
+    "rxjs",
+    "rx"
+  ],
+  "bugs": {
+    "url": "https://github.com/cycloidal/driver-router/issues"
+  },
+  "homepage": "https://github.com/cycloidal/driver-router#readme",
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0"
+  },
+  "peerDependencies": {
+    "history": "^2.1.1",
+    "rx": "^4.1.0",
+    "uniloc": "^0.3.0"
+  }
+}
