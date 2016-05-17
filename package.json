@@ -34,5 +34,9 @@
     "history": "^2.1.1",
     "rx": "^4.1.0",
     "uniloc": "^0.3.0"
+  },
+  "dependencies": {
+    "history": "^2.1.1",
+    "uniloc": "^0.3.0"
   }
 }
