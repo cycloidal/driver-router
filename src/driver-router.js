@@ -1,9 +1,10 @@
-import { createHistory } from 'history'
+import {
+    createHistory
+} from 'history'
 import uniloc from 'uniloc'
 
-export function createRouterDriver(routes, aliases) {
+function createRouterDriver(routes) {
 
-    const router = uniloc(routes, aliases)
     const history = createHistory()
 
     const history$ = Rx.Observable.create(obs =>
@@ -11,7 +12,7 @@ export function createRouterDriver(routes, aliases) {
     )
 
     const route$ = history$
-        .map(location => router.lookup(`${location.pathname}${location.search}${location.hash}`))
+        .map(location => routes.lookup(`${location.pathname}${location.search}${location.hash}`))
         .replay(1)
     route$.connect()
 
@@ -20,7 +21,7 @@ export function createRouterDriver(routes, aliases) {
     route$.subscribe(route => _currentRoute = route)
 
     function to(name, options) {
-        history.push(router.generate(name, options))
+        history.push(routes.generate(name, options))
     }
 
     return function(vtree$) {
@@ -35,4 +36,13 @@ export function createRouterDriver(routes, aliases) {
         }
     }
 
+}
+
+function createRoutes(routes, aliases) {
+    return uniloc(routes, aliases)
+}
+
+export {
+    createRouterDriver,
+    createRoutes
 }
