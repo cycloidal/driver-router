@@ -1,6 +1,6 @@
 {
   "name": "@cycloidal/driver-router",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Jakob Hohlfeld",
   "description": "A router for cycle.js using uniloc and history.",
   "license": "MIT",
